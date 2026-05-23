@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Levente Palotás</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <nav>
+      <a href="#hero" class="logo">LP</a>
+      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1>
+            <span class="line">Levente</span>
+            <span class="line dim offset">Palotás</span>
+          </h1>
+          <p class="subtitle">Computer Science student at the University of Vienna. Building apps, algorithms, and things that matter.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">See my work</a>
+            <a href="#contact" class="btn btn-ghost">Get in touch</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <img src="images/levente.jpg" alt="Levente Palotás" class="hero-photo" />
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-label">01 — About</div>
+      <div class="about-grid">
+        <h2>A little<br/>about me</h2>
+        <div class="about-right">
+          <p>I'm a Budapest-born Computer Science student at the University of Vienna, currently looking for new opportunities in the city. I have a strong foundation in software engineering, data analysis, and mobile development — and I love building things that are both technically solid and genuinely useful to people.</p>
+          <p>Detail-oriented and motivated, I thrive in collaborative environments and I'm always pushing to expand my skills. When I'm not coding, you'll find me solving math problems or exploring Vienna.</p>
+          <div class="skills-list">
+            <span>Java</span><span>Kotlin</span><span>Python</span><span>SQL</span>
+            <span>Android</span><span>REST APIs</span><span>Machine Learning</span>
+            <span>Data Analysis</span><span>HTML / CSS / JS</span><span>Git / GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="section-label">02 — Education</div>
+      <h2>Academic<br/>background</h2>
+      <div class="edu-list">
+
+        <div class="edu-item" onclick="toggleEdu(this)" tabindex="0" role="button" aria-expanded="false">
+          <img src="images/Uniwien.jpeg" alt="University of Vienna" class="edu-img" />
+          <div class="edu-right">
+            <span class="edu-year">2024 — present</span>
+            <h3>University of Vienna</h3>
+            <p class="edu-degree">BSc Computer Science</p>
+            <span class="edu-arrow">↓</span>
+          </div>
+          <div class="edu-expand">
+            <p>It has always been my dream to study in Austria — Vienna in particular. As a child I spent a great deal of time here and have been learning German since a young age. Studying Computer Science at the University of Vienna has been everything I hoped for: fascinating courses, challenging projects, and inspiring people. Every semester brings new knowledge and perspectives that push me to grow.</p>
+          </div>
+        </div>
+
+        <div class="edu-item" onclick="toggleEdu(this)" tabindex="0" role="button" aria-expanded="false">
+          <img src="images/Apaczai.jpeg" alt="Apáczai" class="edu-img" />
+          <div class="edu-right">
+            <span class="edu-year">2020 — 2024</span>
+            <h3>Apáczai Csere János High School</h3>
+            <p class="edu-degree">Mathematics &amp; Physics · Budapest</p>
+            <span class="edu-arrow">↓</span>
+          </div>
+          <div class="edu-expand">
+            <p>Apáczai is one of Hungary's finest secondary schools — ranked among the top 3 nationally during my years there. I studied in the Mathematics and Physics specialization class, which gave me the analytical foundation I still rely on every day. Many of my closest friends from those years now work in similar fields. The intellectual rigor and curiosity I developed there continue to drive everything I do.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-label">03 — Projects</div>
+      <h2>Selected<br/>work</h2>
+
+      <!-- 01 GRÄTZEL -->
+      <div class="project-featured">
+        <div class="project-featured-left">
+          <div class="project-featured-header">
+            <span class="project-featured-number">01</span>
+            <span class="project-featured-badge">Featured</span>
+          </div>
+          <h3>Grätzel</h3>
+          <p class="project-featured-sub">Neighborhood Marketplace App · Android</p>
+          <p class="project-featured-desc">Led the development of Grätzel — a full-featured Android marketplace connecting neighbors to offer and find local services, from tutoring to household help. I designed and built the core architecture, the personalized home feed with location-based listings, real-time chat, user profiles, and the full listing creation flow. Built with Kotlin and Jetpack Compose following Material 3 design principles.</p>
+          <div class="project-tags">
+            <span>Kotlin</span><span>Jetpack Compose</span><span>Android Studio</span><span>REST API</span><span>Material 3</span>
+          </div>
+        </div>
+        <div class="project-featured-screens">
+          <div class="phone-mockup">
+            <img src="images/gratzel-1.webp" alt="Grätzel home" class="screen active" id="screen-1"/>
+            <img src="images/gratzel-2.webp" alt="Grätzel detail" class="screen" id="screen-2"/>
+            <img src="images/gratzel-3.webp" alt="Grätzel chat" class="screen" id="screen-3"/>
+            <img src="images/gratzel-4.webp" alt="Grätzel profile" class="screen" id="screen-4"/>
+          </div>
+          <div class="screen-dots">
+            <button class="dot active" onclick="switchScreen(1)"></button>
+            <button class="dot" onclick="switchScreen(2)"></button>
+            <button class="dot" onclick="switchScreen(3)"></button>
+            <button class="dot" onclick="switchScreen(4)"></button>
+          </div>
+          <video class="gratzel-video" src="videos/gratzel-demo.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+
+      <!-- 02 JAVA GAME CLIENT -->
+      <div class="project-featured">
+        <div class="project-featured-left">
+          <div class="project-featured-header">
+            <span class="project-featured-number">02</span>
+          </div>
+          <h3>Autonomous Java<br/>Game Client</h3>
+          <p class="project-featured-sub">Two-Player Treasure Hunt · Java</p>
+          <p class="project-featured-desc">Built a fully autonomous Java game client for a two-player treasure hunt game. The client handles REST-based server communication, procedural half-map generation with flood-fill validation, and AI-driven pathfinding using Dijkstra's algorithm and BFS to navigate a shared game map within a strict 160-move limit.</p>
+          <div class="project-tags">
+            <span>Java</span><span>Spring Boot</span><span>REST API</span><span>Dijkstra</span><span>BFS</span><span>Gradle</span>
+          </div>
+        </div>
+        <div class="project-featured-screens">
+          <video class="se1-video" src="videos/se1-demo.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+
+      <!-- 03 MUSEUM SEARCH -->
+      <div class="project-featured">
+        <div class="project-featured-left">
+          <div class="project-featured-header">
+            <span class="project-featured-number">03</span>
+          </div>
+          <h3>Museum Search<br/>Android App</h3>
+          <p class="project-featured-sub">Art Institute of Chicago · Android</p>
+          <p class="project-featured-desc">Built a native Android app to browse and explore the permanent collection of the Art Institute of Chicago via their public REST API. Features a three-screen architecture with real-time filters by artist, medium and date range, async image loading, double-tap zoom on artwork images, and state management through a shared ViewModel using Kotlin StateFlow.</p>
+          <div class="project-tags">
+            <span>Kotlin</span><span>Jetpack Compose</span><span>OkHttp</span><span>Gson</span><span>REST API</span><span>Material 3</span>
+          </div>
+        </div>
+        <div class="project-featured-screens">
+          <video class="se1-video" src="videos/museum-demo.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+
+      <!-- 04 TRAFFIC SIGN ML -->
+      <div class="project-featured project-featured--ml">
+        <div class="ml-header">
+          <div class="project-featured-header">
+            <span class="project-featured-number">04</span>
+          </div>
+          <h3>Traffic Sign Classification &amp;<br/>Representation Learning</h3>
+          <p class="project-featured-sub">Supervised Learning · Data Analysis · Python</p>
+          <p class="project-featured-desc">Analyzed German traffic sign image data (GTSRB dataset) using a range of machine learning models — from a simple linear classifier to CNNs, autoencoders, and supervised encoders. The goal was to compare classification accuracy and explore how different model architectures form internal representations of visual data.</p>
+          <div class="project-tags">
+            <span>Python</span><span>PyTorch</span><span>scikit-learn</span><span>NumPy</span><span>Matplotlib</span><span>GTSRB</span>
+          </div>
+        </div>
+
+        <div class="ml-row">
+          <img src="images/traffic-samples.webp" alt="Traffic sign samples" class="ml-img" />
+          <div class="ml-text">
+            <h4>Dataset Samples</h4>
+            <p>Sample images from the GTSRB dataset — 7 traffic sign classes including speed limits (60, 70, 80, 100 km/h), yield, priority road, and stop signs. The dataset contains significant variation in lighting, angle, blur, and image quality, making classification a non-trivial task.</p>
+          </div>
+        </div>
+
+        <div class="ml-row ml-row--reverse">
+          <img src="images/latent-space.png" alt="2D latent space" class="ml-img" />
+          <div class="ml-text">
+            <h4>2D Latent Space Projection</h4>
+            <p>Visualization of the supervised encoder's 2D latent space on the test set. Each color represents a traffic sign class — the model learned to clearly separate all seven classes in just two dimensions, revealing strong discriminative structure in the learned representations.</p>
+          </div>
+        </div>
+
+        <div class="ml-row">
+          <img src="images/confusion-matrix.png" alt="Confusion matrix" class="ml-img" />
+          <div class="ml-text">
+            <h4>CNN Confusion Matrix</h4>
+            <p>Confusion matrix of the CNN classifier evaluated on the held-out test set. The bright diagonal confirms high accuracy across most classes. The main confusion occurs between visually similar speed limit signs — particularly 60, 80, and 100 km/h — which share the same circular red border and differ only in their inner digits.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CV -->
+    <section id="cv">
+      <div class="section-label">04 — CV</div>
+      <div class="cv-block">
+        <h2>My<br/>résumé</h2>
+        <div class="cv-right">
+          <p>Download my full CV to see my experience, education, and skills in detail.</p>
+          <div class="cv-buttons">
+            <a href="cv-en.pdf" class="btn btn-primary" download>English CV ↓</a>
+            <a href="cv-de.pdf" class="btn btn-ghost" download>German CV ↓</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-label">05 — Contact</div>
+      <div class="contact-block">
+        <h2>Let's work<br/>together</h2>
+        <div class="contact-links">
+          <a href="mailto:lpalotas24@gmail.com" class="contact-item">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">lpalotas24@gmail.com ↗</span>
+          </a>
+          <a href="https://linkedin.com/in/levente-palotas" target="_blank" class="contact-item">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">Palotás Levente ↗</span>
+          </a>
+          <a href="https://github.com/Levi4hu" target="_blank" class="contact-item">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">GitHub Profile ↗</span>
+          </a>
+          <a href="tel:+436641436519" class="contact-item">
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">+43 664 1436519</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Levente Palotás</span>
+      <span>Vienna, Austria</span>
+    </footer>
+
+    <!-- EASTER EGG -->
+    <div class="egg-backdrop" id="egg-backdrop" onclick="closeEgg()"></div>
+    <div class="egg-card" id="egg-card">
+      <button class="egg-close" onclick="closeEgg()">✕</button>
+      <img src="images/zsofi.jpg" alt="Zsófi" class="egg-photo" />
+      <div class="egg-text">
+        <p class="egg-label">My biggest achievement</p>
+        <h3 class="egg-name">Zsófi ❤️</h3>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
