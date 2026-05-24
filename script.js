@@ -1,5 +1,4 @@
 // ── SCROLL REVEAL ──────────────────────────────
-// Featured projektek NINCSENEK benne — a videók miatt
 const revealEls = document.querySelectorAll(
     '.section-label, section h2, .about-right, .project-item, .edu-item, .cv-right, .contact-links, footer'
   );
@@ -18,19 +17,24 @@ const revealEls = document.querySelectorAll(
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.querySelector('.nav-menu');
   const navLinks = document.querySelectorAll('nav ul a');
+  const navBackdrop = document.querySelector('.nav-backdrop');
+  
+  function closeNav() {
+    navMenu.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    if (navBackdrop) navBackdrop.classList.remove('active');
+  }
   
   if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
       const isOpen = navMenu.classList.toggle('open');
       navToggle.classList.toggle('open', isOpen);
       navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (navBackdrop) navBackdrop.classList.toggle('active', isOpen);
     });
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        navToggle.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', () => closeNav());
     });
   }
   
@@ -101,13 +105,11 @@ const revealEls = document.querySelectorAll(
   // ── VIDEO AUTOPLAY ─────────────────────────────
   const videos = document.querySelectorAll('video');
   
-  // Próbáljuk azonnal lejátszani
   videos.forEach(video => {
     video.muted = true;
     video.play().catch(() => {});
   });
   
-  // Ha görgetéskor láthatóvá válik, indítjuk
   const videoObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -118,7 +120,6 @@ const revealEls = document.querySelectorAll(
   
   videos.forEach(video => videoObserver.observe(video));
   
-  // Első user interaction után is megpróbáljuk
   document.addEventListener('click', () => {
     videos.forEach(video => {
       if (video.paused) video.play().catch(() => {});
@@ -130,8 +131,9 @@ const revealEls = document.querySelectorAll(
       if (video.paused) video.play().catch(() => {});
     });
   }, { once: true, passive: true });
+  
   // ── EASTER EGG ─────────────────────────────────
-document.querySelector('.hero-photo').addEventListener('click', () => {
+  document.querySelector('.hero-photo').addEventListener('click', () => {
     document.getElementById('egg-backdrop').classList.add('active');
     document.getElementById('egg-card').classList.add('active');
   });
@@ -142,5 +144,8 @@ document.querySelector('.hero-photo').addEventListener('click', () => {
   }
   
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeEgg();
+    if (e.key === 'Escape') {
+      closeEgg();
+      closeNav();
+    }
   });

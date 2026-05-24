@@ -363,3 +363,33 @@
   font-size: 1.6rem; font-weight: 800;
   letter-spacing: -0.5px;
 }
+/* ── NAV CLOSE & BACKDROP ────────────────────── */
+.nav-close {
+    display: none;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: 1px solid var(--border);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--text);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 99;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-close { display: flex; }
+    .nav-backdrop.active { display: block; }
+  }
